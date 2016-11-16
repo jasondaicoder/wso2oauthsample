@@ -1,0 +1,25 @@
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans" 
+	xmlns:oauth2="http://www.springframework.org/schema/security/oauth2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security 
+						http://www.springframework.org/schema/security/spring-security.xsd
+						http://www.springframework.org/schema/security/oauth2
+    					http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
+
+	<b:bean id="tokenService" class="com.dimensiondata.wso2oauthsample.oauth2.TokenService" />
+	
+	<b:bean id="authenticationEntryPoint" class="org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint" />
+
+	<authentication-manager />
+	
+	<oauth2:resource-server id="resourceServerFilter" token-services-ref="tokenService" />
+	
+	<http pattern="/api/**" create-session="stateless" entry-point-ref="authenticationEntryPoint" use-expressions="false">
+		<custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER"/>
+		<intercept-url pattern="/api/**" access="ROLE_USER" />
+	</http>
+
+</b:beans>
