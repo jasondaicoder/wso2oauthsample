@@ -1,5 +1,5 @@
 ===============================
-Plumbery
+WSO2OAuthSample
 ===============================
 
 .. image:: https://travis-ci.org/jasondaicoder/wso2oauthsample.svg?branch=master
