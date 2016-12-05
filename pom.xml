@@ -49,19 +49,19 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.wso2.carbon.identity.inbound.auth.oauth2</groupId>
-			<artifactId>org.wso2.carbon.identity.oauth.stub</artifactId>
-			<version>${wso2.identity.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.wso2.carbon</groupId>
-			<artifactId>org.wso2.carbon.utils</artifactId>
-			<version>${wso2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -88,12 +88,4 @@
 	<build>
 		<finalName>wso2oauthsample</finalName>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>wso2-carbon</id>
-			<name>wso2 carbon maven repository</name>
-			<url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
-		</repository>
-	</repositories>
 </project>

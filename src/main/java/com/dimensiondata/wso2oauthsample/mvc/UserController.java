@@ -32,6 +32,11 @@ public class UserController {
 		return new ResponseEntity<String>(String.format("Hello %s", userId), HttpStatus.OK);
 	}
 	
+	@GetMapping("/hello")
+	public ResponseEntity<String> hello() {
+		return new ResponseEntity<String>("Hello message from api server.", HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/claims", method = RequestMethod.GET)
 	public ResponseEntity<List<String>> claims() {
 		List<String> claims = new ArrayList<String>();
